@@ -367,7 +367,7 @@ body {
 }
 
 .ours-ambition {
-  padding-top: 220px;
+  padding-top: min(16vh, 220px);
   padding-inline: var(--container-padding-x);
   display: flex;
   align-items: flex-start;
@@ -386,13 +386,13 @@ body {
   display: flex;
   flex-direction: column;
   row-gap: 70px;
-  min-width: 620px;
-  flex-basis: 45%;
+  flex-basis: 60%;
 }
 .appasion-header{
   font-weight: 400;
   font-size: 42px;
   line-height: 1.2;
+  text-wrap: nowrap;
 }
 
 .appasion-description {
@@ -405,7 +405,10 @@ body {
 }
 
 .de_line {
+  display: inline-flex;
+  align-items: center;
   flex-basis: 50%;
+  flex-shrink: 2;
   height: calc(42px * 1.2);
 }
 
@@ -436,7 +439,19 @@ body {
   }
 
   .header-menu-link, .header-button {
-      height: 40px;
+    height: 40px;
+  }
+  .ours-ambition{
+    flex-wrap: wrap;
+  }
+
+  .appasion {
+    order: 1;
+    flex-basis: 100%;
+  }
+
+  .appasion-header{
+    text-wrap: wrap;
   }
 }
 
