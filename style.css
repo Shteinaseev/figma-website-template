@@ -226,7 +226,6 @@ svg * {
  ::after {
    animation-duration: 0.01ms !important;
    animation-iteration-count: 1 !important;
-   transition-duration: 0.01ms !important;
    scroll-behavior: auto !important;
  }
 }
@@ -368,7 +367,8 @@ body {
 }
 
 .ours-ambition {
-  padding: 220px var(--container-padding-x) 0;
+  padding-top: 220px;
+  padding-inline: var(--container-padding-x);
   display: flex;
   align-items: flex-start;
   justify-content: flex-center;
@@ -379,12 +379,15 @@ body {
   font-size: 15px;
   line-height: calc(42px * 1.2);
   flex-basis: auto;
+  text-wrap: nowrap;
 }
 
 .appasion {
   display: flex;
   flex-direction: column;
   row-gap: 70px;
+  min-width: 620px;
+  flex-basis: 45%;
 }
 .appasion-header{
   font-weight: 400;
@@ -393,17 +396,22 @@ body {
 }
 
 .appasion-description {
-  padding-right: 50%;
+  padding-right: 40%;
   font-size: 20px;
   font-weight: 400;
   display: inline-flex;
   flex-direction: column;
+  text-align: left;
 }
 
-
+.de_line {
+  flex-basis: 50%;
+  height: calc(42px * 1.2);
+}
 
 .line{
-  width: 625px;
+  width: 100%;
+  display: inline-block;
   height: 1px;
   background-color: var(--color-light);
 }
@@ -459,4 +467,3 @@ body {
     margin-inline: 15px;
   }
 }
-
