@@ -366,12 +366,13 @@ body {
 }
 
 .ours-ambition {
-  padding-top: clamp(150px, 16vh, 220px);
-  padding-inline: var(--container-padding-x);
+  padding-block: clamp(150px, 16vh, 220px);
+  margin-inline: var(--container-padding-x);
   display: flex;
   align-items: flex-start;
   justify-content: flex-center;
   column-gap: 5px;
+  border-bottom: 1px solid var(--color-light);
 }
 
 .noi {
@@ -400,6 +401,8 @@ body {
   font-weight: 400;
   display: inline-flex;
   flex-direction: column;
+  line-height: 1;
+  row-gap: 16px;
 }
 
 .de_line {
@@ -418,6 +421,51 @@ body {
   background-color: var(--color-light);
 }
 
+.blue{
+  color: var(--color-blue);
+}
+
+.services{
+  padding-top: 26px;
+  padding-inline: var(--container-padding-x);
+  display: flex;
+  justify-content: space-between;
+  row-gap: 50px;
+}
+
+.services-lists{
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 100px;
+}
+
+.services-title{
+  font-size: min(2.22vw, 32px);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.service-card-title{
+  display: inline-flex;
+  flex-direction: column;
+  font-size: min(1.94vw, 28px);
+  line-height: 1.2;
+  font-weight: 400;
+  padding-bottom: 20px;
+}
+.service-card-title::after{
+  content: '';
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-light);
+}
+
+.brand-design-item, .web-design-item, .copywriting-item{
+  font-size: min(1.52vw, 22px);
+  line-height: 1.8;
+  text-wrap: nowrap;
+}
+
 @media(max-width: 1306px){
   .ours-ambition{
     flex-wrap: wrap;
@@ -427,6 +475,14 @@ body {
   }
   .de_line{
     padding-left: 0;
+  }
+  .services{
+    flex-wrap: wrap;
+  }
+  .services-lists{
+    flex-basis: 100%;
+    justify-content: center;
+    column-gap: 100px;
   }
 }
 
