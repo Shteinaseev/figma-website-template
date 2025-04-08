@@ -578,9 +578,6 @@ blokquote cite{
 }
 
 @media(max-width: 550px) {
-  html{
-    font-size: 90%;
-  }
   :root{
     --container-padding-x: 40px;
   }
