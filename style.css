@@ -236,7 +236,7 @@ svg * {
   --container-width: 1440px;
   --font-family-base: 'Inter', sans-serif;
   --header-height: 178px;
-  --transition-duration: 0.2s;
+  --transition-duration: 0.3s;
 }
 
 body {
@@ -246,6 +246,7 @@ body {
   background-color: var(--color-black);
   color: var(--color-light);
   line-height: 1.75;
+  margin-inline: var(--container-padding-x);
 }
 
 .container {
@@ -257,7 +258,6 @@ body {
 .header {
   display: grid;
   align-items: center;
-  padding-inline: var(--container-padding-x);
   grid-template-columns: auto auto 1fr auto;
   grid-row: var(--header-height);
   column-gap: 85px;
@@ -302,7 +302,6 @@ body {
 
 .banner {
   padding-block: 30px;
-  padding-inline: var(--container-padding-x);
   display: flex;
 }
 
@@ -333,7 +332,6 @@ body {
 }
 
 .quore {
-  margin-inline: var(--container-padding-x);
   height: 144px;
   display: flex;
   column-gap: 60px;
@@ -351,12 +349,10 @@ body {
 
 .ours-ambition {
   padding-block: clamp(150px, 16vh, 220px);
-  margin-inline: var(--container-padding-x);
   display: flex;
   align-items: flex-start;
   justify-content: flex-center;
   column-gap: 5px;
-  border-bottom: 1px solid var(--color-light);
 }
 
 .noi {
@@ -385,7 +381,7 @@ body {
   font-weight: 400;
   display: inline-flex;
   flex-direction: column;
-  line-height: 1;
+  line-height: 1.3;
   row-gap: 16px;
 }
 
@@ -411,10 +407,10 @@ body {
 
 .services{
   padding-block: 26px;
-  padding-inline: var(--container-padding-x);
   display: flex;
   justify-content: space-between;
   row-gap: 50px;
+  border-top: 1px solid var(--color-light);
 }
 
 .services-lists{
@@ -458,9 +454,12 @@ body {
   padding-block: clamp(100px, 17.6vh, 190px);
 }
 
+p{
+  margin: 0;
+}
+
 blokquote{
   padding-block: 80px;
-  padding-inline: var(--container-padding-x);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -470,10 +469,10 @@ blokquote{
   background-repeat: no-repeat;
   background-position: center right;
   background-clip: border-box;
+  background-size: contain;
 }
 
 blokquote p{
-  margin: 0;
   line-height: 1.2;
   font-size: clamp(30px, 5.69vw, 82px);
   max-width: 90%;
@@ -482,6 +481,27 @@ blokquote p{
 blokquote cite{
   font-style: normal;
   font-size: 19px;
+}
+
+.loopnumbers{
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 20px;
+}
+
+.loopnumber-item{
+  max-width: 432px;
+  display: inline-flex;
+  align-items: center;
+  column-gap: 10px;
+  padding-right: 20px;
+}
+.number{
+  font-size: clamp(80px, 7.36vw, 106px);
+  line-height: 1.2;
+}
+.loopnumber-item p:nth-child(even){
+  font-size: clamp(15px, 1.38vw, 20px);
 }
 
 @media(max-width: 1306px){
@@ -535,6 +555,7 @@ blokquote cite{
   .appasion-header{
     text-wrap: wrap;
   }
+
 }
 
 @media(max-width: 930px){
