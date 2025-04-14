@@ -348,7 +348,7 @@ body {
 }
 
 .ours-ambition {
-  padding-block: clamp(150px, 16vh, 220px);
+  padding-block: 220px;
   display: flex;
   align-items: flex-start;
   justify-content: flex-center;
@@ -373,7 +373,6 @@ body {
   font-weight: 400;
   font-size: clamp(25px, 3vw, 42px);
   line-height: 1.2;
-  text-wrap: nowrap;
 }
 
 .appasion-description {
@@ -406,7 +405,8 @@ body {
 }
 
 .services{
-  padding-block: 26px;
+  padding-top: 26px;
+  padding-bottom: 120px;
   display: flex;
   justify-content: space-between;
   row-gap: 50px;
@@ -450,37 +450,51 @@ body {
   text-wrap: nowrap;
 }
 
-.magia{
-  padding-block: clamp(100px, 17.6vh, 190px);
-}
-
 p{
   margin: 0;
 }
 
-blokquote{
-  padding-block: 80px;
+.text-block{
+  max-width: 100%;
+  min-height: calc(77vw * 1.3);
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-weight: 400;
-  row-gap: 40px;
-  background-image: url(images/sculp.jpg);
-  background-repeat: no-repeat;
-  background-position: center right;
-  background-clip: border-box;
-  background-size: 40% 100%;
+  justify-content: flex-end;
 }
 
-blokquote p{
+blockquote{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  z-index: 2;
+  align-self: center;
+  text-align: left;
+  right: 0;
+}
+
+blockquote p{
   line-height: 1.2;
   font-size: clamp(30px, 5.69vw, 82px);
   max-width: 90%;
 }
-
-blokquote cite{
+blockquote cite{
   font-style: normal;
   font-size: 19px;
+}
+
+.background {
+  overflow-x: hidden;
+  position: relative;
+  width: 77vw;
+  float: right;   
+}
+
+.background img{
+  position: absolute;
+  right: 0;
+  min-width: 110%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .loopnumbers{
@@ -502,54 +516,6 @@ blokquote cite{
 }
 .loopnumber-item p:nth-child(even){
   font-size: clamp(15px, 1.38vw, 20px);
-}
-
-.clienti{
-  display: flex;
-  column-gap: 150px;
-  border-top: 1px solid var(--color-light);
-}
-
-.clienti h2{
-  margin-top: 20px;
-  color: var(--color-blue);
-  font-weight: 400;
-}
-
-.table{
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.row{
-  flex-basis: 100%;
-  display: grid;
-  grid-template-columns: auto auto 1fr auto;
-  grid-template-rows: 141px;
-  column-gap: 50px;
-  justify-content: center;
-  align-items: center;
-  border-bottom: 1px solid var(--color-light);
-}
-
-.row p{
-  font-size: 19px;
-}
-.name{
-  grid-column: 1;
-}
-.desc{
-  text-transform: lowercase;
-  grid-column: 2;
-}
-.row img{
-  grid-column: 4;
-}
-.border{
-  position: relative;
-  width: 100%;
-  height: 1px;
-  background-color: var(--color-light);
 }
 
 @media(max-width: 1306px){
@@ -577,6 +543,111 @@ blokquote cite{
 
 }
 
+.design{
+  margin-top: 188px;
+  display: flex;
+  column-gap: 150px;
+  border-top: 1px solid var(--color-light);
+}
+
+.design h2{
+  margin-top: 20px;
+  color: var(--color-blue);
+  font-weight: 400;
+}
+
+.table{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row{
+  flex-basis: 100%;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  grid-template-rows: 141px;
+  column-gap: 50px;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid var(--color-light);
+}
+
+.row p{
+  font-size: clamp(14px, 1.32vw, 19px);
+}
+.name{
+  grid-column: 1;
+}
+.desc{
+  text-transform: lowercase;
+  grid-column: 2;
+}
+
+p.plus{
+  font-size: clamp(70px, 7.57vw, 109px);
+  line-height: 1;
+  grid-column: 4;
+}
+
+.border{
+  position: relative;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-light);
+}
+
+.add{
+  margin-top: 75px;
+  width: clamp(250px, 31.25vw, 450px);
+  height: clamp(85px, 8.72vh, 106px);
+  border: 1px solid var(--color-light);
+  border-radius: 100px;
+}
+
+.awards{
+  border-top: 1px solid var(--color-light);
+  display: flex;
+  column-gap: 40px;
+  flex-wrap: wrap;
+}
+
+.awards h2{
+  margin: 0;
+  padding-top: 25px;
+  color: var(--color-blue);
+  font-size: 31px;
+  font-weight: 400;
+}
+
+.awards > article{
+  padding-top: 60px;
+  flex-basis: 200px;
+}
+
+@media (min-width: 1200px) {
+  .text-block{
+    max-width: 100%;
+    min-height: auto;  
+  }
+  .prometheus{
+    background-image: url(images/sculp.jpg);
+  }
+  .sculpture{
+    background-image: url(images/home-quote-desktop.webp);
+  }
+  blockquote{
+    position: static;
+    padding-block: 80px;
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-clip: border-box;
+    background-size:contain;
+  }
+  
+  .background{
+    display: none;
+  }
+}
 @media (max-width: 1060px){
   .header {
       padding-top: 10px;
@@ -606,12 +677,21 @@ blokquote cite{
 
 }
 
+@media(max-width: 775px){
+  .design{
+    flex-wrap: wrap;
+  }
+  .row{
+    column-gap: 15px;
+  }
+}
+
 @media(max-width: 930px){
-  blokquote{
+  blockquote{
     flex-wrap: wrap;
   }
 
-  blokquote p{
+  blockquote p{
     max-width: 100%;
   }
 }
@@ -622,6 +702,12 @@ blokquote cite{
   }
   .appasion{
     row-gap: 35px;
+  }
+  .ours-ambition{
+    padding-block: 110px;
+  }
+  .design{
+    margin-top: 110px;
   }
 }
 
