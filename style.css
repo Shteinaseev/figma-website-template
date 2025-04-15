@@ -454,6 +454,11 @@ p{
   margin: 0;
 }
 
+.plus {
+  font-size: clamp(70px, 7.57vw, 109px)!important;
+  line-height: 1;
+}
+
 .text-block{
   max-width: 100%;
   min-height: calc(77vw * 1.3);
@@ -583,9 +588,7 @@ blockquote cite{
   grid-column: 2;
 }
 
-p.plus{
-  font-size: clamp(70px, 7.57vw, 109px);
-  line-height: 1;
+.row .plus{
   grid-column: 4;
 }
 
@@ -608,7 +611,6 @@ p.plus{
   border-top: 1px solid var(--color-light);
   display: flex;
   column-gap: 40px;
-  flex-wrap: wrap;
 }
 
 .awards h2{
@@ -619,10 +621,59 @@ p.plus{
   font-weight: 400;
 }
 
-.awards > article{
+.awards-container{
+  display: flex;
   padding-top: 60px;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.awards-container > article{
   flex-basis: 200px;
 }
+
+.letters{
+  border-top: 1px solid var(--color-light);
+  margin-block: 200px;
+}
+
+.letters h2{
+  color: var(--color-blue);
+  font-size: clamp(25px, 2.15vw, 31px);
+}
+
+.letters > p {
+  font-size: clamp(17px, 1.6vw, 23px);
+}
+
+.posts{
+  padding-top: 146px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: auto;
+  gap: 40px;
+}
+
+.posts img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.text-container{
+  display: flex;
+  row-gap: 20px;
+  justify-content: space-between;
+}
+
+.text-container .plus{
+  flex-basis: auto;
+}
+
+.text-container p{
+  font-size: 16px;
+  flex-basis: 40%;
+}
+
 
 @media (min-width: 1200px) {
   .text-block{
@@ -680,10 +731,19 @@ p.plus{
 @media(max-width: 775px){
   .design{
     flex-wrap: wrap;
+    margin-top: 102px;
   }
   .row{
     column-gap: 15px;
   }
+  .posts{
+    padding-top: 110px;
+    grid-template-columns: 1fr;
+  }
+  .text-container{
+    flex-wrap: wrap;
+  }
+
 }
 
 @media(max-width: 930px){
@@ -709,6 +769,7 @@ p.plus{
   .design{
     margin-top: 110px;
   }
+
 }
 
 @media(max-width: 550px) {
@@ -724,6 +785,9 @@ p.plus{
     column-gap: 25px;
     padding-inline: 0;
   }
+  .awards{
+    flex-wrap: wrap;
+  }
 
 }
 
@@ -732,8 +796,12 @@ p.plus{
     font-size: 70%;
   }
 
-    :root{
+  :root{
     --container-padding-x: 15px;
+  }
+  .text-container p:nth-child(2){
+    order: 1;
+    flex-basis: 100%;
   }
 
   .header-menu-list {
