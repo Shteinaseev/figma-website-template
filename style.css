@@ -777,6 +777,10 @@ option{
   flex-wrap: wrap;
 }
 
+.checkbox-inner{
+  flex-basis: 100%;
+}
+
 .invia{
   font-size: clamp(22px, 2vw, 28px);
   min-width: 210px;
