@@ -80,7 +80,7 @@ a,button {
 }
 
 a:hover, button:hover {
-  color: var(--color-gray);
+  color: var(--color-blue);
 }
 
 
@@ -241,7 +241,7 @@ svg * {
 
 body {
   font-family: var(--font-family-base);
-  font-size: 19px;
+  font-size: clamp(13px, 1.38vw, 19px);
   font-weight: 400;
   background-color: var(--color-black);
   color: var(--color-light);
@@ -523,30 +523,6 @@ blockquote cite{
   font-size: clamp(15px, 1.38vw, 20px);
 }
 
-@media(max-width: 1306px){
-  .ours-ambition{
-    flex-wrap: wrap;
-  }
-  .appasion{
-    order: 1;
-  }
-  .de_line{
-    padding-left: 0;
-  }
-  .services{
-    flex-direction: column;
-  }
-  .services-lists{
-    justify-content: space-between;
-    column-gap: clamp(20px, 5.21vh, 75px);
-    row-gap: 45px;
-    flex-wrap: wrap-reverse;
-  }
-  .brand-design{
-    order: 1;
-  }
-
-}
 
 .design{
   margin-top: 188px;
@@ -600,14 +576,17 @@ blockquote cite{
   background-color: var(--color-light);
 }
 
-.add{
+.add, .invia{
   display: grid;
   place-content: center;
+  border: 1px solid currentColor;
+  border-radius: 100px;
+}
+
+.add{
   margin-top: 75px;
   width: clamp(250px, 31.25vw, 450px);
   height: clamp(85px, 8.72vh, 106px);
-  border: 1px solid var(--color-light);
-  border-radius: 100px;
   font-size: 60px;
 }
 
@@ -691,6 +670,133 @@ blockquote cite{
   grid-column: -1/1;
 }
 
+.contact{
+  border-top: 1px solid var(--color-light);
+  padding-top: 20px;
+  margin-bottom: 55px;
+}
+
+.contact-header{
+  display: flex;
+  justify-content: space-between;
+  gap:20px;
+}
+
+.contact-header h2{
+  font-size: min(7.778vw, 112px);
+  font-weight: 400;
+  line-height: 1;
+  margin: 0;
+}
+
+.contact-links{
+  display: flex;
+  gap:20px 30px;
+}
+
+.contact-links a{
+  display: inline-flex;
+  flex-direction: column;
+  font-size: clamp(20px, 2vw, 28px);
+}
+
+.contact-links a::after{
+  content: '';
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+}
+form{
+  margin-left: 330px;
+}
+
+.form-inner{
+  padding-block: 80px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 41px 30px;
+}
+
+
+select{
+  background-image: url(icons/plus.svg);
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-origin: content-box;
+  background-size: 20px;
+}
+
+.input{
+  transition-duration: 0.3s;
+}
+
+textarea{
+  grid-column: 1/-1;
+}
+
+.input, textarea{
+  appearance: none;
+  padding-bottom: 10px;
+  background-color: transparent;
+  color: var(--color-light);
+  border: none;
+  border-bottom: 1px solid currentColor;
+}
+.input:focus{
+  outline: none;
+  color: var(--color-blue);
+}
+
+textarea:focus{
+  outline: none;
+}
+
+option{
+  color: var(--color-black);
+}
+
+.submit{
+  display: flex;
+  align-items: center;
+  column-gap: 132px;
+  row-gap: 30px;
+  justify-content: space-between;
+}
+
+.checkbox label{
+  font-size: clamp(14px, 1.2vw, 17px);
+}
+
+.checkbox label a{
+  text-decoration: underline;
+}
+
+.checkbox{
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.invia{
+  font-size: clamp(22px, 2vw, 28px);
+  min-width: 210px;
+  height: 72px;
+}
+
+.check{
+  width: 22px;
+  aspect-ratio: 1;
+}
+
+footer{
+  display: flex;
+  justify-content: space-between;
+  row-gap: 20px;
+  padding-block: 42px;
+  border-top: 1px solid var(--color-light);
+  font-size: clamp(13.5px, 1.11vw, 16px);
+}
+
 @media (min-width: 1200px) {
   .text-block{
     max-width: 100%;
@@ -714,7 +820,36 @@ blockquote cite{
   .background{
     display: none;
   }
+  
 }
+
+@media(max-width: 1306px){
+  .ours-ambition{
+    flex-wrap: wrap;
+  }
+  .appasion{
+    order: 1;
+  }
+  .de_line{
+    padding-left: 0;
+  }
+  .services{
+    flex-direction: column;
+  }
+  .services-lists{
+    justify-content: space-between;
+    column-gap: clamp(20px, 5.21vh, 75px);
+    row-gap: 45px;
+    flex-wrap: wrap-reverse;
+  }
+  .brand-design{
+    order: 1;
+  }
+  form{
+    margin-left: 175px;
+  }
+}
+
 @media (max-width: 1060px){
   .header {
       padding-top: 10px;
@@ -741,6 +876,18 @@ blockquote cite{
   .appasion-header{
     text-wrap: wrap;
   }
+  form{
+    margin-left: 85px;
+  }
+  .submit{
+    column-gap: 50px;
+  }
+  select{
+    background-size: 14px;
+  }
+  footer{
+    flex-wrap: wrap;
+  }
 
 }
 
@@ -751,9 +898,15 @@ blockquote cite{
   .row{
     column-gap: 15px;
   }
+  .letters{
+    margin-bottom: 100px;
+  }
   .posts{
     padding-top: 110px;
     grid-template-columns: 1fr;
+  }
+  form{
+    margin-left: 0;
   }
 
 }
@@ -781,6 +934,12 @@ blockquote cite{
   .design, .letters{
     margin-top: 110px;
   }
+  .contact-header{
+    flex-wrap: wrap;
+  }
+  .invia{
+    min-width: min(22vw, 150px);
+  }
 }
 
 @media(max-width: 550px) {
@@ -799,6 +958,11 @@ blockquote cite{
     column-gap: 30px;
   }
 
+  .form-inner{
+    grid-template-columns: 1fr;
+    max-width: 450px;
+  }
+
   .header-menu-list {
     column-gap: 25px;
     padding-inline: 0;
@@ -806,6 +970,13 @@ blockquote cite{
   .awards{
     flex-wrap: wrap;
   }
+  .submit{
+    flex-wrap: wrap;
+  }
+  .invia{
+    min-width: 80%;
+  }
+
 
 }
 
@@ -827,4 +998,7 @@ blockquote cite{
     margin-inline: 15px;
   }
 
+  .contact-links{
+    flex-wrap: wrap;
+  }
 }
